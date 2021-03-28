@@ -63,17 +63,12 @@ function createViz(data){
             .selectAll("g")
             .selectAll('circle')
             .on("mouseover", function(d,i){
-            d3.select(this)
-                .transition()
-                .duration(400)
-                .attr("r", d => radiusScale(d[attribute]*2))
-            d3.select(this.parentElement).raise();
-            region = d.region
-            d3.selectAll("g.overallG")
-                .select('circle')
-                .classed("active", d=>d.region == region)
-                .classed("inactive", d=>d.region != region)
-            })
+                region = d.region
+                d3.selectAll("g.overallG")
+                    .select('circle')
+                    .classed("active", d=>d.region == region)
+                    .classed("inactive", d=>d.region != region)
+                })
             .on("mouseout", function(d){
                 d3.selectAll("g.overallG")
                     .select('circle')
