@@ -17,7 +17,17 @@ In order to avoid having the element below the others (for example in case this 
 
 * `style("pointer-events","none");` can be used to disable events (mouseover, out) fired by this element
 
+
+
 ### Chapter 4
+
+* Create xAxis for one more label so that they do not end on the last value (7) but expand the range to be greater than the width so that the values are nicely spread on the width of the svg
+
+* The coordinates (x,y) of the elements inside the g are relative to the parent. In this case g was placed on the median value so every coordinate for the graphical components are relative to the median value (scaled).
+
+* Use the post-selection for removing the domain lines of the axis [see issue](https://github.com/d3/d3-axis/issues/48).
+
+* When drawing complex components grouped in a g and associated with the same data point, one can draw the g, attach the data and then call the function `.each(function(d,i){` //draw the different components and access the g element by calling this}.
 
 * To create a line, use `d3.line()` which takes a generator for mapping x `.x()` values and y `.y()` values (scaled) and returns a function. Then pass this returned function to the **d** attribute of the path element to draw the line.
 * Use `d3.line().defined(*function for each data point returning a boolean*)` method to not interpolate points in the data (not shown in this example)
