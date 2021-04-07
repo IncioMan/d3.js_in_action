@@ -19,7 +19,7 @@ In order to avoid having the element below the others (for example in case this 
 
 ### Chapter 4
 
-* To create a line, use d3.line() which takes a generator for mapping x .x() values and y .y() values (scaled) and returns a function. Then pass this returned function to the **d** attribute of the path element to draw the line.
-* Use d3.line().defined(*function for each data point returning a boolean*) method to not interpolate points in the data (not shown in this example)
-* The interpolation method for the line can be selected using the .curve() method: cardinal, basis, step
+* To create a line, use `d3.line()` which takes a generator for mapping x `.x()` values and y `.y()` values (scaled) and returns a function. Then pass this returned function to the **d** attribute of the path element to draw the line.
+* Use `d3.line().defined(*function for each data point returning a boolean*)` method to not interpolate points in the data (not shown in this example)
+* The interpolation method for the line can be selected using the `.curve()` method: cardinal, basis, step
 * Axis can be styled using css selectors (.ticks > line/text) or via the .call method when drawing the axis
